@@ -51,7 +51,6 @@ public class MyIndexService {
         try {
            return emPloyeeRepository.getAll();
         } catch (Exception e) {
-
             log.info(e.getMessage());
             e.printStackTrace();
         }
