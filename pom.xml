@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>my-elastisearch</artifactId>
+    <artifactId>index</artifactId>
     <version>1.0</version>
-    <name>my-elastisearch</name>
+    <name>index</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
