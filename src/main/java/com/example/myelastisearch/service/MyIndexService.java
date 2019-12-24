@@ -21,8 +21,8 @@ public class MyIndexService {
 
 
 
-    @Autowired
-    private ArticleRepositoryImpl articleRepository;
+//    @Autowired
+//    private ArticleRepositoryImpl articleRepository;
 
     @Autowired
     private EmPloyeeRepositoryImpl emPloyeeRepository;
@@ -31,9 +31,9 @@ public class MyIndexService {
         this.emPloyeeRepository = emPloyeeRepository;
     }
 
-    public void setiArticleRepository(ArticleRepositoryImpl articleRepository){
-        this.articleRepository = articleRepository;
-    }
+//    public void setiArticleRepository(ArticleRepositoryImpl articleRepository){
+//        this.articleRepository = articleRepository;
+//    }
 
 
     /**
