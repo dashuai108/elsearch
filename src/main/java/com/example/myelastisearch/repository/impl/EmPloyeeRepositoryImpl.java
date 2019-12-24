@@ -19,7 +19,7 @@ public class EmPloyeeRepositoryImpl extends BaseRepositoryImpl<EmployeeVo> imple
     @RepositoryName("employee")
     protected String type;
 
-
+    public EmPloyeeRepositoryImpl(){};
 
 //    /**
 //     * 写一些特殊的方法
