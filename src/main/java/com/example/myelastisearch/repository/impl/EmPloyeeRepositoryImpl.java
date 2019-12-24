@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Component
 @Slf4j
-@Repository
 public class EmPloyeeRepositoryImpl extends BaseRepositoryImpl<EmployeeVo> implements IEmPloyeeRepository {
 
     //索引
