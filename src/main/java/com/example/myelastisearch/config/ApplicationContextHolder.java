@@ -11,7 +11,6 @@ import javax.annotation.PostConstruct;
 @Component
 public class ApplicationContextHolder implements ApplicationContextAware {
 
-    @Autowired
     private static ApplicationContext applicationContext;
 
     @Override
@@ -23,8 +22,9 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         }
     }
 
-    public  <T>T getBean(String beanName){
-        System.out.println("applicationContext 测试======"+this.applicationContext.toString());
-        return (T)this.applicationContext.getBean(beanName);
+    public static  <T>T getBean(String beanName){
+
+        System.out.println("applicationContext 测试======"+applicationContext.toString());
+        return (T)applicationContext.getBean(beanName);
     }
 }
