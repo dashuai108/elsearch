@@ -5,31 +5,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class ApplicationContextHolder  {
-//public class ApplicationContextHolder implements ApplicationContextAware {
-
-    @Autowired
-    private static ApplicationContext applicationContext;
+//public class ApplicationContextHolder  {
+public class ApplicationContextHolder implements ApplicationContextAware {
 
 
-    public void setApplicationContext(ApplicationContext applicationContext) {
+    public static ApplicationContext applicationContext;
+
+    @Override
+    public  void setApplicationContext(ApplicationContext applicationContext) {
         try {
-            this.applicationContext = applicationContext;
+            ApplicationContextHolder.applicationContext = applicationContext;
         } catch (BeansException e) {
             e.printStackTrace();
         }
     }
 
     public static  <T>T getBean(String beanName){
-
 //        System.out.println("applicationContext 测试======"+applicationContext.toString());
-        if(null!=applicationContext){
-            return (T)applicationContext.getBean(beanName);
-        }
-        return null;
+        return (T)applicationContext.getBean(beanName);
+
     }
 }
