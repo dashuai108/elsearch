@@ -46,6 +46,11 @@ public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
     //es的REST客户端
     protected RestHighLevelClient client = ApplicationContextHolder.getBean("client");
     
+    @PostConstruct
+    public void init() {
+        this.client = ApplicationContextHolder.getBean("client");
+    }
+    
     //传递过来的泛型类型
     private Class<T> clazz;
 
