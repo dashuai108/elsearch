@@ -18,10 +18,10 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         this.applicationContext = applicationContext;
     }
 
-    @PostConstruct
-    public void init(){
-        applicationContext = applicationContext;
-    }
+//    @PostConstruct
+//    public void init(){
+//        applicationContext = applicationContext;
+//    }
     public  static <T>T getBean(String beanName){
         System.out.println("applicationContext-----:"+applicationContext.toString());
         return (T)applicationContext.getBean(beanName);
