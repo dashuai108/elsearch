@@ -37,11 +37,11 @@ public class MyIndexService {
     /**
      * 初始化数据，把数据库里的国际化都读入缓存的Map里
      */
-    @PostConstruct
-    public void init() {
-        this.emPloyeeRepository = this.emPloyeeRepository;
-        this.articleRepository = this.articleRepository;
-    }
+//    @PostConstruct
+//    public void init() {
+//        this.emPloyeeRepository = this.emPloyeeRepository;
+//        this.articleRepository = this.articleRepository;
+//    }
 
     /**
      * 获取所有员工信息
