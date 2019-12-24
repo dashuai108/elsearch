@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 public class ApplicationContextHolder implements ApplicationContextAware {
 
     @Autowired
-    private static ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) {
