@@ -9,12 +9,13 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 @Component
-public class ApplicationContextHolder implements ApplicationContextAware {
+public class ApplicationContextHolder  {
+//public class ApplicationContextHolder implements ApplicationContextAware {
 
     @Autowired
     private static ApplicationContext applicationContext;
 
-    @Override
+
     public void setApplicationContext(ApplicationContext applicationContext) {
         try {
             this.applicationContext = applicationContext;
@@ -23,14 +24,12 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         }
     }
 
-    public  <T>T getBean(String beanName){
+    public static  <T>T getBean(String beanName){
 
-        System.out.println("applicationContext 测试======"+this.applicationContext.toString());
-        if(null==this.applicationContext){
-            return null;
-        }else{
-            return (T)this.applicationContext.getBean(beanName);
+//        System.out.println("applicationContext 测试======"+applicationContext.toString());
+        if(null!=applicationContext){
+            return (T)applicationContext.getBean(beanName);
         }
-
+        return null;
     }
 }
