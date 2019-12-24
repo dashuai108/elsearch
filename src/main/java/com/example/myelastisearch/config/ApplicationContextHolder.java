@@ -26,6 +26,11 @@ public class ApplicationContextHolder implements ApplicationContextAware {
     public  <T>T getBean(String beanName){
 
         System.out.println("applicationContext 测试======"+this.applicationContext.toString());
-        return (T)this.applicationContext.getBean(beanName);
+        if(null==this.applicationContext){
+            return null;
+        }else{
+            return (T)this.applicationContext.getBean(beanName);
+        }
+
     }
 }
