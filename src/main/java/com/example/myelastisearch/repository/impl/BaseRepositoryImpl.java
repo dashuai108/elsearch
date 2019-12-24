@@ -31,6 +31,7 @@ import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 
+import javax.annotation.PostConstruct;
 import javax.naming.directory.SearchResult;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -44,10 +45,11 @@ public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
     private String baseType;
 
     //es的REST客户端
-    protected RestHighLevelClient client = ApplicationContextHolder.getBean("client");
+    public RestHighLevelClient client = ApplicationContextHolder.getBean("client");
     
     //传递过来的泛型类型
     private Class<T> clazz;
+
 
 
     /**
@@ -180,7 +182,7 @@ public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
         //设置查询的参数和范围
         searchRequest.source(searchSourceBuilder);
 
-        SearchResponse search = client.search(searchRequest, RequestOptions.DEFAULT);
+        SearchResponse search = this.client.search(searchRequest, RequestOptions.DEFAULT);
         SearchHits hits = search.getHits();
 
         Long totalHits = hits.getTotalHits().value;
