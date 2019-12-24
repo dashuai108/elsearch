@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
 public class ApplicationContextHolder implements ApplicationContextAware {
     @Autowired
@@ -16,7 +18,10 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         ApplicationContextHolder.applicationContext = applicationContext;
     }
 
-
+    @PostConstruct
+    public void init(){
+        applicationContext = applicationContext;
+    }
     public  static <T>T getBean(String beanName){
         return (T)applicationContext.getBean(beanName);
     }
