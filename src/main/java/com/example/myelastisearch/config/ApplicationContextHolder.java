@@ -11,7 +11,6 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.annotation.PostConstruct;
 
 @Component
-//public class ApplicationContextHolder  {
 public class ApplicationContextHolder implements ApplicationContextAware {
 
 

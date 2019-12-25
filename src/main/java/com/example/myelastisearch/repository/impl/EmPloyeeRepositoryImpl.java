@@ -7,8 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-@Component
+
 @Slf4j
+@Repository
 public class EmPloyeeRepositoryImpl extends BaseRepositoryImpl<EmployeeVo>{
 
     //索引

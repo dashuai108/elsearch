@@ -50,7 +50,7 @@ public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
 
 
     //es的REST客户端
-    public RestHighLevelClient client = ApplicationContextHolder.getBean("client");
+    protected RestHighLevelClient client = ApplicationContextHolder.getBean("client");
 //    public RestHighLevelClient client = ApplicationContextHolder.getBean("client");
 
 
