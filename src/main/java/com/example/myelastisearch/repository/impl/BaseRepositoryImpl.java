@@ -31,6 +31,7 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.naming.directory.SearchResult;
@@ -40,6 +41,7 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 @Slf4j
+@Repository
 public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
     //索引
     private String baseIndex;
