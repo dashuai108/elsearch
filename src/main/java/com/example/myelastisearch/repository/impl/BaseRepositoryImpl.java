@@ -158,7 +158,7 @@ public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
 
         searchRequest.source(searchSourceBuilder);
 
-        SearchResponse search = client.search(searchRequest, RequestOptions.DEFAULT);
+        SearchResponse search = getClient().search(searchRequest, RequestOptions.DEFAULT);
 
         SearchHits hits = search.getHits();
         SearchHit[] hitsArray = hits.getHits();
