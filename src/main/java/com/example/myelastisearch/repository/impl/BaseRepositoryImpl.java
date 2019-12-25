@@ -42,7 +42,6 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 @Slf4j
-@Component
 public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
     //索引
     private String baseIndex;
@@ -50,10 +49,17 @@ public class BaseRepositoryImpl<T> implements IBaseRepository<T> {
     private String baseType;
 
 
+    protected RestHighLevelClient client;
 
-
+    public RestHighLevelClient getClient(){
+        if(null==client){
+            log.info(" client is null =================== ");
+            client = ApplicationContextHolder.getBean("client");
+        }
+        return client;
+    }
     //es的REST客户端
-    protected RestHighLevelClient client = ApplicationContextHolder.getBean("client");
+//    protected RestHighLevelClient client = ApplicationContextHolder.getBean("client");
 //    public RestHighLevelClient client = ApplicationContextHolder.getBean("client");
 
 

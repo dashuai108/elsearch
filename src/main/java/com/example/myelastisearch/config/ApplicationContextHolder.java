@@ -1,5 +1,6 @@
 package com.example.myelastisearch.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +12,7 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.annotation.PostConstruct;
 
 @Component
+@Slf4j
 public class ApplicationContextHolder implements ApplicationContextAware {
 
 
@@ -48,6 +50,7 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         }else{
             System.out.println("applicationContext不是空的");
         }
+        log.info("nmae:========"+name);
         return (T)applicationContext.getBean(name);
     }
 
